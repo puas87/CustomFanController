@@ -33,7 +33,7 @@ class DialView @JvmOverloads constructor(
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
         textAlign = Paint.Align.CENTER
-        textSize = 55.0f
+        textSize = 25.0f
         typeface = Typeface.create( "", Typeface.BOLD)
     }
 
@@ -55,6 +55,12 @@ class DialView @JvmOverloads constructor(
         paint.color = if (fanSpeed == FanSpeed.OFF) Color.GRAY else Color.GREEN
         // Draw the dial.
         canvas.drawCircle((width / 2).toFloat(), (height / 2).toFloat(), radius, paint)
+
+        // Draw the indicator circle.
+        val markerRadius = radius + RADIUS_OFFSET_INDICATOR
+        pointPosition.computeXYForSpeed(fanSpeed, markerRadius)
+        paint.color = Color.BLACK
+        canvas.drawCircle(pointPosition.x, pointPosition.y, radius/12, paint)
 
         // Draw the text labels.
         val labelRadius = radius + RADIUS_OFFSET_LABEL
