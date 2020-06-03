@@ -1,4 +1,4 @@
-package com.example.android.customfancontroller
+package com.example.android.customviewsexamples
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

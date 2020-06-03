@@ -1,4 +1,4 @@
-package com.example.android.customfancontroller
+package com.example.android.customviewsexamples
 
 import org.junit.Test
 

@@ -1,11 +1,11 @@
-package com.example.android.customfancontroller.view
+package com.example.android.customviewsexamples.view
 
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.withStyledAttributes
-import com.example.android.customfancontroller.R
+import com.example.android.customviewsexamples.R
 import kotlin.math.min
 import kotlin.math.sin
 import kotlin.math.cos
