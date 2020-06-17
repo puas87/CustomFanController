@@ -8,4 +8,7 @@
     <string name="fan_high">3</string>
     <string name="open_dialactivity">Open DialActivity</string>
     <string name="open_minipaintactivity">Open MiniPaintActivity</string>
+
+    <string name="canvasContentDescription">Mini Paint is a simple line drawing app.
+   Drag your fingers to draw. Rotate the phone to clear.</string>
 </resources>
