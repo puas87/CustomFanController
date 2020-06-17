@@ -1,0 +1,8 @@
+package com.example.android.customviewsexamples.view
+
+import android.content.Context
+import android.view.View
+
+class MyCanvasView(context: Context) : View(context) {
+
+}
