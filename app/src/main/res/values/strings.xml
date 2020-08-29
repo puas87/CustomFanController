@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">CustomFanController</string>
+    <string name="app_name">CustomViewsExamples</string>
+    <string name="main_title">Select an Custom View example</string>
     <string name="fan_control">Fan Control</string>
     <string name="fan_off">off</string>
     <string name="fan_low">1</string>
     <string name="fan_medium">2</string>
     <string name="fan_high">3</string>
+    <string name="open_dialactivity">Open DialActivity</string>
+    <string name="open_minipaintactivity">Open MiniPaintActivity</string>
+
+    <string name="canvasContentDescription">Mini Paint is a simple line drawing app.
+   Drag your fingers to draw. Rotate the phone to clear.</string>
 </resources>
