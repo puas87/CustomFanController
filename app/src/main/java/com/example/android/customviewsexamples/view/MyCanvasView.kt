@@ -53,7 +53,7 @@ class MyCanvasView(context: Context) : View(context) {
         canvas.drawBitmap(extraBitmap, 0f, 0f, null)
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
+    override fun onTouchEvent(event: MotionEvent): Boolean {
         motionTouchEventX = event.x
         motionTouchEventY = event.y
 
