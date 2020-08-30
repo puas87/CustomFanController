@@ -40,6 +40,14 @@
             android:text="@string/open_minipaintactivity"
             app:layout_constraintTop_toBottomOf="@id/buttonDial" />
 
+        <Button
+            android:id="@+id/buttonClipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_16"
+            android:text="@string/open_minipaintactivity"
+            app:layout_constraintTop_toBottomOf="@id/buttonMiniPaint" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

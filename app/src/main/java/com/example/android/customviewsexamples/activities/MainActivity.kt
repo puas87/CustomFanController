@@ -15,5 +15,6 @@ class MainActivity : AppCompatActivity() {
             DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         binding.buttonDial.setOnClickListener { navigateTo(DialActivity::class.java) }
         binding.buttonMiniPaint.setOnClickListener { navigateTo(MiniPaintActivity::class.java) }
+        binding.buttonClipping.setOnClickListener { navigateTo(ClippingActivity::class.java) }
     }
 }
