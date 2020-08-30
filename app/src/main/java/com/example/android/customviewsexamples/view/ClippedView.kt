@@ -87,7 +87,7 @@ class ClippedView @JvmOverloads constructor(
     private fun drawBackAndUnclippedRectangle(canvas: Canvas) {
         canvas.drawColor(Color.GRAY)
         canvas.save()
-        canvas.translate(columnOne,rowOne)
+        canvas.translate(columnOne, rowOne)
         drawClippedRectangle(canvas)
         canvas.restore()
     }
@@ -95,10 +95,10 @@ class ClippedView @JvmOverloads constructor(
     private fun drawDifferenceClippingExample(canvas: Canvas) {
         canvas.save()
         // Move the origin to the right for the next rectangle.
-        canvas.translate(columnTwo,rowOne)
+        canvas.translate(columnTwo, rowOne)
         // Use the subtraction of two clipping rectangles to create a frame.
         canvas.clipRect(
-            2 * rectInset,2 * rectInset,
+            2 * rectInset, 2 * rectInset,
             clipRectRight - 2 * rectInset,
             clipRectBottom - 2 * rectInset
         )
@@ -108,14 +108,14 @@ class ClippedView @JvmOverloads constructor(
         // which is currently available in API level 26 and higher.
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
             canvas.clipRect(
-                4 * rectInset,4 * rectInset,
+                4 * rectInset, 4 * rectInset,
                 clipRectRight - 4 * rectInset,
                 clipRectBottom - 4 * rectInset,
                 Region.Op.DIFFERENCE
             )
         else {
             canvas.clipOutRect(
-                4 * rectInset,4 * rectInset,
+                4 * rectInset, 4 * rectInset,
                 clipRectRight - 4 * rectInset,
                 clipRectBottom - 4 * rectInset
             )
@@ -131,8 +131,8 @@ class ClippedView @JvmOverloads constructor(
         // keeps the internal data structure for faster reuse.
         path.rewind()
         path.addCircle(
-            circleRadius,clipRectBottom - circleRadius,
-            circleRadius,Path.Direction.CCW
+            circleRadius, clipRectBottom - circleRadius,
+            circleRadius, Path.Direction.CCW
         )
         // The method clipPath(path, Region.Op.DIFFERENCE) was deprecated in
         // API level 26. The recommended alternative method is
@@ -149,9 +149,9 @@ class ClippedView @JvmOverloads constructor(
 
     private fun drawIntersectionClippingExample(canvas: Canvas) {
         canvas.save()
-        canvas.translate(columnTwo,rowTwo)
+        canvas.translate(columnTwo, rowTwo)
         canvas.clipRect(
-            clipRectLeft,clipRectTop,
+            clipRectLeft, clipRectTop,
             clipRectRight - smallRectOffset,
             clipRectBottom - smallRectOffset
         )
@@ -163,14 +163,14 @@ class ClippedView @JvmOverloads constructor(
             canvas.clipRect(
                 clipRectLeft + smallRectOffset,
                 clipRectTop + smallRectOffset,
-                clipRectRight,clipRectBottom,
+                clipRectRight, clipRectBottom,
                 Region.Op.INTERSECT
             )
         } else {
             canvas.clipRect(
                 clipRectLeft + smallRectOffset,
                 clipRectTop + smallRectOffset,
-                clipRectRight,clipRectBottom
+                clipRectRight, clipRectBottom
             )
         }
         drawClippedRectangle(canvas)
@@ -178,6 +178,23 @@ class ClippedView @JvmOverloads constructor(
     }
 
     private fun drawCombinedClippingExample(canvas: Canvas) {
+        canvas.save()
+        canvas.translate(columnOne, rowThree)
+        path.rewind()
+        path.addCircle(
+            clipRectLeft + rectInset + circleRadius,
+            clipRectTop + circleRadius + rectInset,
+            circleRadius, Path.Direction.CCW
+        )
+        path.addRect(
+            clipRectRight / 2 - circleRadius,
+            clipRectTop + circleRadius + rectInset,
+            clipRectRight / 2 + circleRadius,
+            clipRectBottom - rectInset, Path.Direction.CCW
+        )
+        canvas.clipPath(path)
+        drawClippedRectangle(canvas)
+        canvas.restore()
     }
 
     private fun drawRoundedRectangleClippingExample(canvas: Canvas) {
